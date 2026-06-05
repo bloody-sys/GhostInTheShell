@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4 Brother Barber Shop</title>
+
+    <style>
+
+
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#111;
+            color:white;
+            overflow-x:hidden;
+        }
+
+        /* HEADER */
+        header{
+            width:100%;
+            background:#8b0000;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 60px;
+            position:sticky;
+            top:0;
+            z-index:1000;
+            box-shadow:0 4px 10px rgba(0,0,0,0.4);
+        }
+
+        /* LOGO */
+        .logo{
+            font-size:28px;
+            font-weight:bold;
+            color:white;
+            letter-spacing:2px;
+            animation:slideLeft 1s ease;
+        }
+
+        .logo span{
+            color:#6a1313;
+        }
+
+        /* NAVIGATION */
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:30px;
+        }
+
+        nav ul li a{
+            text-decoration:none;
+            color:white;
+            font-size:18px;
+            transition:0.3s;
+            position:relative;
+        }
+
+        nav ul li a:hover{
+            color:#ff4d4d;
+        }
+
+        nav ul li a::after{
+            content:'';
+            position:absolute;
+            width:0%;
+            height:2px;
+            background:white;
+            left:0;
+            bottom:-5px;
+            transition:0.4s;
+        }
+
+        nav ul li a:hover::after{
+            width:100%;
+        }
+
+        /* HERO SECTION */
+        .hero{
+            height:90vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            flex-direction:column;
+            background:linear-gradient(
+                rgba(0,0,0,0.7),
+                rgba(0,0,0,0.7)
+            ),
+            url('https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=1400&auto=format&fit=crop') center/cover;
+        }
+
+        .hero h1{
+            font-size:60px;
+            color:#ff4d4d;
+            animation:fadeIn 2s ease;
+        }
+
+        .hero p{
+            margin-top:20px;
+            font-size:22px;
+            animation:fadeIn 3s ease;
+        }
+        
+
+
+/* BOOK NOW BUTTON */
+.btn{
+    margin-top:30px;
+    padding:15px 40px;
+    border:none;
+    outline:none;
+    color:rgb(119, 37, 126);
+    font-size:18px;
+    font-weight:bold;
+    border-radius:10px;
+    cursor:pointer;
+    position:relative;
+    z-index:0;
+    background:#1c0a0a;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+/* RGB BORDER EFFECT */
+.btn::before{
+    content:'';
+    position:absolute;
+    top:-2px;
+    left:-2px;
+    width:calc(100% + 4px);
+    height:calc(100% + 4px);
+    background:linear-gradient(
+        45deg,
+        red,
+        orange,
+        yellow,
+        lime,
+        cyan,
+        blue,
+        violet,
+        red
+    );
+    background-size:400%;
+    border-radius:10px;
+    z-index:-1;
+    animation:rgbGlow 8s linear infinite;
+}
+
+/* INNER BACKGROUND */
+.btn::after{
+    content:'';
+    position:absolute;
+    top:2px;
+    left:2px;
+    width:calc(100% - 4px);
+    height:calc(100% - 4px);
+    background:#0d0b0b;
+    border-radius:8px;
+    z-index:-1;
+}
+
+/* HOVER EFFECT */
+.btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 20px red;
+}
+
+/* ANIMATION */
+@keyframes rgbGlow{
+
+    0%{
+        background-position:0 0;
+    }
+
+    50%{
+        background-position:400% 0;
+    }
+
+    100%{
+        background-position:0 0;
+    }
+}
+
+
+        /* FOOTER */
+        footer{
+            background:#8b0000;
+            text-align:center;
+            padding:20px;
+            font-size:16px;
+        }
+
+        /* ANIMATIONS */
+        @keyframes slideLeft{
+            from{
+                opacity:0;
+                transform:translateX(-100px);
+            }
+            to{
+                opacity:1;
+                transform:translateX(0);
+            }
+        }
+
+        @keyframes fadeIn{
+            from{
+                opacity:0;
+                transform:translateY(40px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px){
+
+            header{
+                flex-direction:column;
+                gap:15px;
+                padding:20px;
+            }
+
+            nav ul{
+                gap:15px;
+            }
+
+            .hero h1{
+                font-size:40px;
+            }
+
+            .hero p{
+                font-size:18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <!-- LOGO -->
+        <div class="logo">
+            4 Brother <span>Barber Shop</span>
+        </div>
+
+        <!-- NAVIGATION -->
+        <nav>
+            <ul>
+                <li><a href="test.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="About.html">Enroll Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- HERO SECTION -->
+   <!-- HERO SECTION -->
+<section class="hero">
+
+    <h1 id="typing"></h1>
+
+    <p>
+        Premium Haircuts & Modern Style
+    </p>
+    <p>
+        established by: ShreeRam Thakur <span>in</span> 2022
+    </p>
+
+    <button class="btn">
+    visit now
+</button>
+
+      <div class=>
+        <p>this shop is very standard shop in Jugedi<br>
+        Come and cut your hair and belong here</p>
+    </div>
+
+</section>
+    <!-- FOOTER -->
+    <footer>
+        © 2026 4 Brother Barber Shop | All Rights Reserved
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+const texts = [
+    "Welcome to 4 Brother Barber Shop",
+    "Make Your Hair Look Hero",
+    "Fresh Fade, Fresh Confidence",
+    "Sharp Cuts for Sharp Men",
+    "Style Starts With Your Hair",
+    "Your Style, Our Passion",
+    "Best Barber Shop In Town",
+    "Haircuts That Make You Shine",
+    "Classic Cuts With Modern Touch",
+    "Look Smart, Feel Smart",
+    "Premium Grooming Experience"
+];
+
+let speed = 100;
+let textIndex = 0;
+let charIndex = 0;
+
+const typingElement = document.getElementById("typing");
+
+function typeEffect() {
+
+    if(charIndex < texts[textIndex].length){
+
+        typingElement.innerHTML += texts[textIndex].charAt(charIndex);
+
+        charIndex++;
+
+        setTimeout(typeEffect, speed);
+
+    } else {
+
+        setTimeout(eraseEffect, 1500);
+    }
+}
+
+function eraseEffect(){
+
+    if(typingElement.innerHTML.length > 0){
+
+        typingElement.innerHTML =
+            typingElement.innerHTML.slice(0, -1);
+
+        setTimeout(eraseEffect, 50);
+
+    } else {
+
+        textIndex++;
+
+        if(textIndex >= texts.length){
+            textIndex = 0;
+        }
+
+        charIndex = 0;
+
+        setTimeout(typeEffect, 500);
+    }
+}
+
+typeEffect();
+
+</script>
+</body>
+</html>
